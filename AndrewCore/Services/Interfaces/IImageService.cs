@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrewDAL.Repositories
+namespace AndrewCore.Services.Interfaces
 {
-    public class AdminRepository
+    internal interface IImageService
     {
     }
 }

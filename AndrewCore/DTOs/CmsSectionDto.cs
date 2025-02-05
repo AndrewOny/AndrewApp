@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace AndrewDAL.Models
+namespace AndrewCore.DTOs
 {
-    public class CmsSection
+    public class CmsSectionDto
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-
-        [ForeignKey(nameof(Image))]
         public int ImageId { get; set; }
-        public Image Image { get; set; }
+        public ImageDto Image { get; set; }
     }
 }

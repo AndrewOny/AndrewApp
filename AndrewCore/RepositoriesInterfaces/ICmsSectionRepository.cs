@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrewDAL.Repositories
+namespace AndrewCore.RepositoriesInterfaces
 {
-    public class AdminRepository
+    internal interface ICmsSectionRepository
     {
     }
 }

@@ -8,7 +8,6 @@ namespace AndrewDAL.Migrations
         public DbSet<CmsSectionType> CmsSectionTypes { get; set; }
         public DbSet<CmsSection> CmsSections { get; set; }
         public DbSet<VisitorMessage> VisitorMessages { get; set; }
-        public DbSet<ContactForm> ContactForms { get; set; }
         public DbSet<AdminUser> AdminUsers { get; set; }
         public SqLiteContext(DbContextOptions<SqLiteContext> dbContextOptions) : base(dbContextOptions) { }
     }

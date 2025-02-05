@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrewDAL.Repositories
+namespace AndrewCore.Services
 {
-    public class AdminRepository
+    internal class VisitorMessageService
     {
     }
 }

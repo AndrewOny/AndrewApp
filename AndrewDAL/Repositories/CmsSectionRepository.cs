@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AndrewDAL.Repositories
 {
-    public class AdminRepository
+    internal class CmsSectionRepository
     {
     }
 }
