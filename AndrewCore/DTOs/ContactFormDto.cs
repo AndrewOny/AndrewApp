@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace AndrewCore.DTOs
 {
     public class ContactFormDto
     {
+        [Key]
+        public int Id { get; set; }
         public string NameLabel { get; set; } = string.Empty;
         public string NamePlaceholder { get; set; } = string.Empty;
         public string EmailLabel { get; set; } = string.Empty;

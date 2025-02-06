@@ -8,6 +8,7 @@ namespace AndrewCore.DTOs
 {
     public class VisitorMessageDto
     {
+        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;

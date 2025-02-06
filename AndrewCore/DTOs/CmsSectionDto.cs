@@ -17,5 +17,7 @@ namespace AndrewCore.DTOs
         public string Description { get; set; }
         public int ImageId { get; set; }
         public ImageDto Image { get; set; }
+        public int CmsSectionTypeId { get; set; }
+        public CmsSectionTypeDto CmsSectionType { get; set; }
     }
 }

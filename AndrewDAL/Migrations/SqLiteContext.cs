@@ -11,6 +11,7 @@ namespace AndrewDAL.Migrations
         public DbSet<CmsSection> CmsSections { get; set; }
         public DbSet<VisitorMessage> VisitorMessages { get; set; }
         public DbSet<AdminUser> AdminUsers { get; set; }
+        public DbSet<ContactForm> ContactForms { get; set; }
         public SqLiteContext(DbContextOptions<SqLiteContext> dbContextOptions) : base(dbContextOptions) { }
         public SqLiteContext() { }
 
