@@ -18,5 +18,9 @@ namespace AndrewDAL.Models
         [ForeignKey(nameof(Image))]
         public int ImageId { get; set; }
         public Image Image { get; set; }
+
+        [ForeignKey(nameof(CmsSectionType))]
+        public int CmsSectionTypeId { get; set; }
+        public CmsSectionType CmsSectionType { get; set; }
     }
 }

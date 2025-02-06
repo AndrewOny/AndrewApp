@@ -10,8 +10,8 @@ namespace AndrewDAL.Models
 {
     public class CmsSectionType
     {
-        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public ICollection<CmsSection> CmsSections { get; set; } // Add this property
     }
 }

@@ -28,5 +28,55 @@ namespace AndrewDAL.Migrations
 
             optionsBuilder.UseSqlite(sqliteBuilder.ToString());
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CmsSectionType>()
+                        .HasMany(sectionType => sectionType.CmsSections)
+                        .WithOne(cmsSection => cmsSection.CmsSectionType)
+                        .HasForeignKey(e => e.CmsSectionTypeId)
+                        .IsRequired();
+
+
+            modelBuilder.Entity<AdminUser>()
+                        .HasIndex(p => p.Login)
+                        .IsUnique();
+
+            modelBuilder.Entity<AdminUser>()
+                        .HasIndex(p => p.Email)
+                        .IsUnique();
+
+            modelBuilder.Entity<AdminUser>()
+                        .HasIndex(p => p.Password)
+                        .IsUnique();
+
+            modelBuilder.Entity<ContactForm>(c =>
+            {
+                c.HasData(new ContactForm
+                {
+                    Id = 1,
+                    NameLabel = "Name",
+                    NamePlaceholder = "Enter your name",
+                    EmailLabel = "Email",
+                    EmailPlaceholder = "Enter your email",
+                    TitleLabel = "Title",
+                    TitlePlaceholder = "Enter the title",
+                    MessageLabel = "Message",
+                    MessagePlaceholder = "Enter your message"
+                });
+            });
+
+            modelBuilder.Entity<AdminUser>(c =>
+            {
+                c.HasData(new AdminUser
+                {
+                    Id = 1,
+                    Login = "admin",
+                    Password = "admin",
+                    Email = "admin@gmail.com"
+                }
+                );
+            });
+        }
     }
 }
