@@ -10,6 +10,8 @@ namespace AndrewDAL.Models
 {
     public class ContactForm
     {
+        [Key]
+        public int Id { get; set; }
         public string NameLabel { get; set; } = string.Empty;
         public string NamePlaceholder { get; set; } = string.Empty;
 

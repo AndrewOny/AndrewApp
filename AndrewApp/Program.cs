@@ -1,4 +1,13 @@
+using AndrewCore.RepositoriesInterfaces;
+using AndrewCore.Services.Interfaces;
+using AndrewDAL.Migrations;
+using AndrewDAL.Repositories;
 using AutoMapper;
+using System;
+using Microsoft.EntityFrameworkCore;
+using AndrewDAL.Models;
+using AndrewDAL.Mapping;
+using Microsoft.Data.Sqlite;
 
 namespace AndrewApp
 {
@@ -8,25 +17,21 @@ namespace AndrewApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //#region Dependency Injection
-            //var config = new MapperConfiguration(c => {
-            //    c.AddProfile<QueryableDatabaseMapperProfile>();
-            //    c.AddProfile<MvcMapperProfile>();
-            //});
+            var connectionString = builder.Configuration.GetConnectionString("SqliteContext");
 
-            //builder.Services.AddSingleton<IMapper>(s => config.CreateMapper());
-            //// Add services to the container.
+            var builderSql = new SqliteConnectionStringBuilder(connectionString);
+            builderSql.DataSource = Path.GetFullPath(
+                Path.Combine(
+                    AppDomain.CurrentDomain.GetData("DataDirectory") as string
+                        ?? AppDomain.CurrentDomain.BaseDirectory,
+                    builderSql.DataSource));
 
-            //builder.Services.AddDbContext<MsSqlContext>(options =>
-            //{
-            //    string? connectionString = builder.Configuration.GetConnectionString("MsSqlContext");
-            //    options.UseSqlServer(connectionString);
-            //    //options.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlContext"));
-            //});
-            //config.AssertConfigurationIsValid();
-            //builder.Services.AddTransient<IBuildingsRepository, BuildingsRepository>();
-            //builder.Services.AddTransient<IBuildingsService, BuildingsService>();
-            //#endregion
+            connectionString = builderSql.ToString();
+
+            builder.Services.AddDbContext<SqLiteContext>(options =>
+            {
+                options.UseSqlite(connectionString);
+            });
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -57,3 +62,4 @@ namespace AndrewApp
         }
     }
 }
+

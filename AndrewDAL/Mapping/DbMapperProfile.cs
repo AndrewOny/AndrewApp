@@ -14,11 +14,6 @@ namespace AndrewDAL.Mapping
         public DbMapperProfile()
         {
             CreateMap<AdminUser, AdminUserDto>().ReverseMap();
-            CreateMap<CmsSectionType, CmsSectionTypeDto>().ReverseMap();
-            CreateMap<CmsSection, CmsSectionDto>().ReverseMap();
-            CreateMap<ContactForm, ContactFormDto>().ReverseMap();
-            CreateMap<Image, ImageDto>().ReverseMap();
-            CreateMap<VisitorMessage, VisitorMessageDto>().ReverseMap();
         }
     }
 }

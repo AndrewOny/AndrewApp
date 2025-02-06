@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AndrewCore.RepositoriesInterfaces
 {
-    internal interface IImageRepository
+    public interface IImageRepository
     {
+
     }
 }
