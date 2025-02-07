@@ -9,6 +9,7 @@ namespace AndrewCore.DTOs
 {
     public class ImageDto
     {
+        [Key]
         public int Id { get; set; }
         public string Path { get; set; }
     }
