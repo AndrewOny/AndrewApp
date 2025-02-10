@@ -142,7 +142,7 @@
     </div>
     <!-- About End -->
     <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
+    <div class="container-xxl py-6 pb-5" id="skil">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -286,6 +286,7 @@
         </div>
     </div>
     <!-- Expertise End -->
+
     <!-- Projects Start -->
     <div class="container-xxl py-6 pt-5" id="project">
         <div class="container">
@@ -293,87 +294,85 @@
                 <div class="col-lg-6">
                     <h1 class="display-5 mb-0">My Projects</h1>
                 </div>
-                <div class="col-lg-6 text-lg-end">
-                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">UI/UX Design</li>
-                        <li class="mx-3" data-filter=".second">Graphic Design</li>
-                    </ul>
-                </div>
             </div>
+
+            <!-- Single row for all portfolio items -->
             <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/Csharp.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/Csharp.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("C#")))
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item first">
+                        <div class="portfolio-img rounded overflow-hidden">
+                            <img class="img-fluid"
+                                 src="@(cmsSection.Image?.Path ?? "img/Csharp.png")"
+                                 alt="@cmsSection.Title"
+                                 style="height: 250px; object-fit: cover; width: 100%;"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#imageModal"
+                                 data-bs-img-src="@(cmsSection.Image?.Path ?? "img/Csharp.png")">
                         </div>
-                        @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Project")))
-                        {
-                            <div class="col-md-4 mb-4">
-                                <div class="section p-4 border rounded">
-                                    <h5>@cmsSection.Title</h5>
-                                    <hr class="text-primary my-2">
-                                    <p>@cmsSection.Description</p>
-                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
-                                    {
-                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
-                                    }
-                                </div>
+
+                        <!-- ✅ Title & Description Section -->
+                        <div class="p-4 border rounded bg-white shadow-sm mt-3">
+                            <h5 class="text-dark">@cmsSection.Title</h5>
+                            <hr class="text-primary my-2">
+                            <p class="text-secondary">@cmsSection.Description</p>
+                        </div>
+                    </div>
+                }
+
+                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Kotlin")))
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item first">
+                        <div class="portfolio-img rounded overflow-hidden">
+                            <img class="img-fluid"
+                                 src="@(cmsSection.Image?.Path ?? "img/Kotlin.png")"
+                                 alt="@cmsSection.Title"
+                                 style="height: 250px; object-fit: cover; width: 100%;">
+                            <div class="portfolio-btn">
+                                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="@(cmsSection.Image?.Path ?? "img/Kotlin.png")" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/Kotlin.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+
+                        <!-- ✅ Title & Description Section -->
+                        <div class="p-4 border rounded bg-white shadow-sm mt-3">
+                            <h5 class="text-dark">@cmsSection.Title</h5>
+                            <hr class="text-primary my-2">
+                            <p class="text-secondary">@cmsSection.Description</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/React.png" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                }
+
+                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("React")))
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item first">
+                        <div class="portfolio-img rounded overflow-hidden">
+                            <img class="img-fluid"
+                                 src="@(cmsSection.Image?.Path ?? "img/React.png")"
+                                 alt="@cmsSection.Title"
+                                 style="height: 250px; object-fit: cover; width: 100%;">
+                            <div class="portfolio-btn">
+                                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="@(cmsSection.Image?.Path ?? "img/React.png")" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ✅ Title & Description Section -->
+                        <div class="p-4 border rounded bg-white shadow-sm mt-3">
+                            <h5 class="text-dark">@cmsSection.Title</h5>
+                            <hr class="text-primary my-2">
+                            <p class="text-secondary">@cmsSection.Description</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-4.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-5.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-6.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
+
     <!-- Projects End -->
+
     <!-- Testimonial Start -->
     <div class="container-fluid bg-light py-5 my-5" id="testimonial">
         <div class="container-fluid py-5">
@@ -463,10 +462,10 @@
     </form>
     <!-- Contact End -->
 
-    <h1 class="text-center mb-4">CMS Sections</h1>
 
+    <!-- CMS Sections-->
     @model List<CmsSectionModel>
-    <div class="container-xxl py-6 pb-5">
+        <div class="container-xxl py-6 pb-5" id="skill">
         <div class="container">
             <h1 class="display-5 mb-5">Skills & Experience</h1>
             <p class="mb-4">
@@ -537,10 +536,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Optionally, a General Section for All CMS Sections -->
-            
-
         </div>
     </div>
 

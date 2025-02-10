@@ -6,6 +6,7 @@ using AndrewCore.DTOs;
 using AndrewCore.RepositoriesInterfaces;
 using AndrewDAL.Migrations;
 using AndrewDAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AndrewDAL.Repositories
 {
@@ -15,11 +16,14 @@ namespace AndrewDAL.Repositories
 
         public List<CmsSectionDto> GetCmsSectionsByType(string type)
         {
-            if (string.IsNullOrWhiteSpace(type))
+            if (string.IsNullOrEmpty(type))
                 throw new ArgumentException("Type cannot be null or empty", nameof(type));
 
             return _context.CmsSections
-                .Where(s => s.CmsSectionType != null && s.CmsSectionType.Name.Equals(type, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.CmsSectionType != null &&
+                            s.CmsSectionType.Name.Equals(type, StringComparison.OrdinalIgnoreCase))
+                .Include(s => s.Image)
+                .Include(s => s.CmsSectionType)
                 .Select(s => new CmsSectionDto
                 {
                     Id = s.Id,
@@ -30,6 +34,7 @@ namespace AndrewDAL.Repositories
                 })
                 .ToList();
         }
+
 
         public CmsSectionRepository(SqLiteContext context)
         {
