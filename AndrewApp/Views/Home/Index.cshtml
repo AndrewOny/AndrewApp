@@ -51,14 +51,9 @@
                 <a href="#home" class="nav-item nav-link active">Home</a>
                 <a href="#about" class="nav-item nav-link">About</a>
                 <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
             </div>
-            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
-                <h1 class="text-primary fw-bold m-0">ProMan</h1>
-            </a>
             <div class="navbar-nav me-auto py-0">
                 <a href="#project" class="nav-item nav-link">Projects</a>
-                <a href="#team" class="nav-item nav-link">Team</a>
                 <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
@@ -291,70 +286,6 @@
         </div>
     </div>
     <!-- Expertise End -->
-    <!-- Service Start -->
-    <div class="container-fluid bg-light my-5 py-6" id="service">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Hire Me</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Creative Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6>
-                            <span>Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Graphic Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6>
-                            <span>Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6>
-                            <span>Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">UI/UX Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6>
-                            <span>Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
     <!-- Projects Start -->
     <div class="container-xxl py-6 pt-5" id="project">
         <div class="container">
@@ -373,16 +304,30 @@
             <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-1.jpg" alt="">
+                        <img class="img-fluid" src="img/Csharp.png" alt="">
                         <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/Csharp.png" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
+                        @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Project")))
+                        {
+                            <div class="col-md-4 mb-4">
+                                <div class="section p-4 border rounded">
+                                    <h5>@cmsSection.Title</h5>
+                                    <hr class="text-primary my-2">
+                                    <p>@cmsSection.Description</p>
+                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
+                                    {
+                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
+                                    }
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-2.jpg" alt="">
+                        <img class="img-fluid" src="img/Kotlin.png" alt="">
                         <div class="portfolio-btn">
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
@@ -391,7 +336,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-3.jpg" alt="">
+                        <img class="img-fluid" src="img/React.png" alt="">
                         <div class="portfolio-btn">
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
@@ -429,7 +374,6 @@
         </div>
     </div>
     <!-- Projects End -->
-    
     <!-- Testimonial Start -->
     <div class="container-fluid bg-light py-5 my-5" id="testimonial">
         <div class="container-fluid py-5">
@@ -519,6 +463,90 @@
     </form>
     <!-- Contact End -->
 
+    <h1 class="text-center mb-4">CMS Sections</h1>
+
+    @model List<CmsSectionModel>
+    <div class="container-xxl py-6 pb-5">
+        <div class="container">
+            <h1 class="display-5 mb-5">Skills & Experience</h1>
+            <p class="mb-4">
+                As a Full Stack Developer with expertise in C#, I have a proven track record in designing and developing scalable web applications.
+                From building robust back-end APIs to creating responsive and dynamic front-end user interfaces, I manage the entire development
+                process to deliver seamless, high-performing solutions.
+            </p>
+            <!-- Navigation pills for Skills and Projects -->
+            <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                <li class="nav-item w-50">
+                    <button class="nav-link w-100 py-3 fs-5 active" id="skills-tab" data-bs-toggle="pill" data-bs-target="#skills" aria-controls="skills" aria-selected="true">Skills</button>
+                </li>
+                <li class="nav-item w-50">
+                    <button class="nav-link w-100 py-3 fs-5" id="experience-tab" data-bs-toggle="pill" data-bs-target="#experience" aria-controls="experience" aria-selected="false">Experience</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Skills Section -->
+                <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                    <p class="mb-4">
+                        I am proficient in C#, JavaScript, HTML, CSS, and various other technologies. With expertise in both back-end and front-end development,
+                        I design and implement robust systems that are scalable, maintainable, and responsive. My key strengths include problem-solving, coding best practices,
+                        and keeping up with emerging technologies.
+                    </p>
+                    <h3 class="mb-4">My Skills</h3>
+                    <div class="row align-items-center">
+                        @foreach (var cmsSection in Model.Where(cs => !cs.Title.Contains("-") && !cs.Title.Contains("Project")))
+                        {
+                            <div class="col-md-4 mb-4">
+                                <div class="section p-4 border rounded">
+                                    <h5>@cmsSection.Title</h5>
+                                    <hr class="text-primary my-2">
+                                    <p>@cmsSection.Description</p>
+                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
+                                    {
+                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+                    <p class="mb-4">
+                        I have worked on various full-stack development projects, including building scalable web applications, designing APIs,
+                        and integrating front-end technologies. These projects range from e-commerce platforms to custom business solutions,
+                        all focused on enhancing user experience and ensuring high performance.
+                    </p>
+                    <h3 class="mb-4">My Experience</h3>
+                    <div class="row mt-4">
+                        @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("-")))
+                        {
+                            <div class="col-md-4 mb-4">
+                                <div class="section p-4 border rounded">
+                                    <h5>@cmsSection.Title</h5>
+                                    <hr class="text-primary my-2">
+                                    <p>@cmsSection.Description</p>
+                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
+                                    {
+                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optionally, a General Section for All CMS Sections -->
+            
+
+        </div>
+    </div>
+
+
+
+
     <!-- Map Start -->
     <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container-xxl pt-5 px-0">
@@ -538,18 +566,15 @@
                     &copy; <a class="border-bottom text-secondary" href="#">Your Site Name</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
                     <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <!-- Copyright End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -566,5 +591,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>

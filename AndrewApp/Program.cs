@@ -1,13 +1,14 @@
 using AndrewCore.RepositoriesInterfaces;
 using AndrewCore.Services.Interfaces;
-using AndrewDAL.Migrations;
 using AndrewDAL.Repositories;
-using AutoMapper;
-using System;
-using Microsoft.EntityFrameworkCore;
 using AndrewDAL.Models;
-using AndrewDAL.Mapping;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 using Microsoft.Data.Sqlite;
+using System;
+using System.IO;
+using AndrewCore.Services;
+using AndrewDAL.Migrations;
 
 namespace AndrewApp
 {
@@ -17,8 +18,10 @@ namespace AndrewApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // ????????? ????? ?'??????? ? ????????????
             var connectionString = builder.Configuration.GetConnectionString("SqliteContext");
 
+            // ?????????? ?????????? ???? ?? ???? ?????
             var builderSql = new SqliteConnectionStringBuilder(connectionString);
             builderSql.DataSource = Path.GetFullPath(
                 Path.Combine(
@@ -28,22 +31,28 @@ namespace AndrewApp
 
             connectionString = builderSql.ToString();
 
+            // ?????????? ???????? ???? ?????
             builder.Services.AddDbContext<SqLiteContext>(options =>
             {
                 options.UseSqlite(connectionString);
             });
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            // ?????????? AutoMapper
+            builder.Services.AddAutoMapper(typeof(Program));
 
+            // ?????????? ?????????? ???????????? ? ????????
+            builder.Services.AddScoped<ICmsSectionRepository, CmsSectionRepository>();
+            builder.Services.AddScoped<ICmsSectionService, CmsSectionService>();
+
+            // ??????? ??????? ??? MVC
+            builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // ???????????? HTTP-???????
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -54,6 +63,7 @@ namespace AndrewApp
 
             app.UseAuthorization();
 
+            // ???????????? ?????????????
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -62,4 +72,3 @@ namespace AndrewApp
         }
     }
 }
-

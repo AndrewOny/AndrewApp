@@ -1,0 +1,59 @@
+﻿@model CmsSectionModel
+
+<div class="col-md-6">
+    <div class="section mb-4">
+        <h5>@Model.Title</h5>
+        <hr class="text-primary my-2">
+
+        <!-- Якщо тип секції - "Skill" -->
+        @if (Model.CmsSectionTypeId == 2)
+        {
+            <div class="d-flex justify-content-between">
+                <h6 class="font-weight-bold">@Model.Title</h6>
+
+                <!-- Якщо тип секції "Skill", але Description визначено в моделі -->
+                @if (!string.IsNullOrEmpty(Model.Description))
+                {
+                    <h6 class="font-weight-bold">@Model.Description</h6>
+                }
+            </div>
+
+            <!-- Перевірка, чи є прогресбар -->
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                @* Перевіряємо, чи можемо перетворити Description в число *@
+                int percentage;
+                if (int.TryParse(Model.Description, out percentage))
+                {
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: @percentage%" aria-valuenow="@percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                }
+                else
+                {
+                    <p>@Model.Description</p> <!-- Якщо Description не число, вивести його як текст -->
+                }
+            }
+        }
+
+        <!-- Якщо тип секції - "Project" -->
+        @if (Model.Title.Contains("*"))
+        {
+            <div class="d-flex justify-content-between">
+                <h6 class="font-weight-bold">@Model.Title</h6>
+
+                <!-- Вивести опис проекту -->
+                @if (!string.IsNullOrEmpty(Model.Description))
+                {
+                    <h6 class="font-weight-bold">@Model.Description</h6>
+                }
+            </div>
+        }
+
+        <!-- Вивести зображення, якщо воно є -->
+        @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.Path))
+        {
+            <img src="@Model.Image.Path" alt="@Model.Title" class="img-fluid mt-3">
+        }
+    </div>
+</div>
