@@ -1,42 +1,41 @@
 ﻿using AndrewDAL.Migrations;
 using Microsoft.AspNetCore.Mvc;
+using AndrewApp.Models;
+using AndrewCore.Services;  // Added namespace for services
+using AndrewDAL.Models;
+using AndrewCore.DTOs;
 
 namespace AndrewApp.Controllers
 {
-    using AndrewApp.Models;
-    using AndrewDAL.Models;
-    using Microsoft.AspNetCore.Mvc;
-
     public class ContactFormController : Controller
     {
         private readonly SqLiteContext _context;
+        private readonly ContactFormService _contactFormService;
 
-        public ContactFormController(SqLiteContext context)
+        public ContactFormController(SqLiteContext context, ContactFormService contactFormService)
         {
             _context = context;
+            _contactFormService = contactFormService;
         }
 
-        // Displays the contact form
         public IActionResult Index()
         {
             return View();
         }
 
-        // Displays the form for creating a new contact submission
         public IActionResult Create()
         {
             return View();
         }
 
-        // Handles form submission (POST request)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ContactFormModel model)
+        public async Task<IActionResult> Create(ContactFormModel model)
         {
             if (ModelState.IsValid)
             {
-                // Assuming you have a model named `ContactForm` in the database
-                var contactForm = new ContactForm
+                // Convert ContactFormModel to ContactFormDto
+                var contactFormDto = new ContactFormDto
                 {
                     NameLabel = model.NameLabel,
                     NamePlaceholder = model.NamePlaceholder,
@@ -49,21 +48,35 @@ namespace AndrewApp.Controllers
                 };
 
                 // Save the contact form submission to the database
-                _context.ContactForms.Add(contactForm);
-                _context.SaveChanges();
+                var contactForm = new ContactForm
+                {
+                    NameLabel = model.NameLabel,
+                    NamePlaceholder = model.NamePlaceholder,
+                    EmailLabel = model.EmailLabel,
+                    EmailPlaceholder = model.EmailPlaceholder,
+                    TitleLabel = model.TitleLabel,
+                    TitlePlaceholder = model.TitlePlaceholder,
+                    MessageLabel = model.MessageLabel,
+                    MessagePlaceholder = model.MessagePlaceholder
+                };
 
-                // Optionally, you can redirect to a confirmation page or show a success message
+                _context.ContactForms.Add(contactForm);
+                await _context.SaveChangesAsync();
+
+                // Call service to send the email, now passing the DTO
+                await _contactFormService.HandleContactFormSubmissionAsync(contactFormDto);
+
                 return RedirectToAction("Success");
             }
 
-            // If the model is invalid, return to the form with validation errors
             return View(model);
         }
 
-        // Displays a success message after submission
         public IActionResult Success()
         {
             return View();
         }
     }
+
+
 }
