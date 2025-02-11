@@ -43,6 +43,14 @@ namespace AndrewApp
 
             var app = builder.Build();
 
+            app.UseStatusCodePages(async x =>
+            {
+                if (x.HttpContext.Response.StatusCode == StatusCodes.Status404NotFound)
+                {
+                    x.HttpContext.Response.Redirect("/Error/ErrorPage404");
+                }
+            });
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -61,6 +69,9 @@ namespace AndrewApp
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+        
+
         }
     }
 }

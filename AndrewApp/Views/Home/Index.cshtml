@@ -61,47 +61,60 @@
     </nav>
     <!-- Navbar End -->
     <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
+    <div class="d-flex justify-content-between align-items-center mt-5 min-vh-70 bg-light p-5" id="home">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Andrew Onyshchuk</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Web Developer, Front End Developer, Apps Developer</div>
+                    <!-- Apply ml-5 (margin-left) to the text container -->
+                    <div class="ml-5">
+                        <h3 class="text-primary mb-3">I'm</h3>
+                        <h1 class="display-3 mb-3">Andrew Onyshchuk</h1>
+                        <h2 class="typed-text-output d-inline"></h2>
+                        <div class="typed-text d-none">Web Developer, Front End Developer, Apps Developer</div>
 
-                    <div class="d-flex flex-column align-items-start justify-content-start min-vh-70 bg-light p-5">
-                        <!-- Кнопка відкриття модального вікна -->
-                        <button type="button" class="btn btn-lg btn-primary px-5 py-3 fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#imageModal">
-                            Open CV
-                        </button>
-                    </div>
+                        <div class="d-flex justify-content-start align-items-center mt-5">
+                            <!-- Кнопка відкриття модального вікна with margin-right -->
+                            <button type="button" class="btn btn-lg btn-primary px-5 py-3 fw-bold shadow-lg me-3" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                Review CV
+                            </button>
 
+                            <!-- Кнопка для завантаження файлу -->
+                            <a href="img/MyCv.pdf" download class="btn btn-lg btn-primary px-5 py-3 fw-bold shadow-lg">
+                                Download CV
+                            </a>
+                        </div>
 
-                    <!-- The Modal -->
-                    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="imageModalLabel">My CV</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body text-center">
-                                    <img class="img-fluid" src="img/CV.jpg" alt="CV">
+                        <!-- The Modal -->
+                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <!-- Added modal-lg class here -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="imageModalLabel">My Portfolio</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <iframe src="img/MyCv.pdf"
+                                                frameBorder="0"
+                                                scrolling="auto"
+                                                height="800px"
+                                                width="100%">
+                                        </iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
                 <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profile.jpg" alt="">
+                    <img class="img-fluid" src="img/logo.svg" alt="">
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <!-- Header End -->
     <!-- Video Modal Start -->
     <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,47 +135,69 @@
         </div>
     </div>
     <!-- Video Modal End -->
+
     <!-- About Start -->
     <div class="container-xxl py-6" id="about">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">10+</h1>
-                            <h5 class="mb-0">Years</h5>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box-shadow-full">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-5">
+                                    <div class="about-img">
+                                        <img src="img/profile.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-7">
+                                    <div class="about-info">
+                                        <p><span class="title-s">Name: </span> <span>Description 1</span></p>
+                                        <p><span class="title-s">Profile: </span> <span>Description 2</span></p>
+                                        <p><span class="title-s">Email: </span> <span>Description 3</span></p>
+                                        <p><span class="title-s">GitHub: </span> <span>Description 3</span></p>
+                                        <p><span class="title-s">Instagram: </span> <span>Description 3</span></p>
+                                        <p><span class="title-s">Telegram: </span> <span>Description 3</span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-mf">
+                                <p class="title-s">Skill</p>
+                                <span>Skill 1</span> <span class="pull-right">80%</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+
+                                <span>Skill 2</span> <span class="pull-right">60%</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+
+                                <span>Skill 3</span> <span class="pull-right">90%</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="lh-base mb-0">of experience in full-stack development</h3>
-                    </div>
-                    <p class="mb-4">I am a skilled C# full-stack developer with expertise in ASP.NET Core, MVC, and database design. Passionate about building efficient and scalable applications, I specialize in creating high-quality software solutions tailored to client needs.</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Strong expertise in C#, .NET, and SQLite</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Experience in database architecture and API development</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Committed to clean and maintainable code</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="#portfolio">View My Work</a>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/profile-1.jpg" alt="Profile Image">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/profile-2.jpg" alt="Coding Image">
+                        <div class="col-md-6">
+                            <div class="about-me pt-4 pt-md-0">
+                                <div class="title-box-2">
+                                    <h5 class="title-left">
+                                        About me
+                                    </h5>
+                                </div>
+                                <p class="lead">This is a brief paragraph describing me, my background, and experience.</p>
+                                <p class="lead">Here is another paragraph where I explain my professional journey and skills.</p>
+                                <p class="lead">I am passionate about technology, programming, and continuous learning.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Successful Projects</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">50+</h2>
-                    </div>
-                    <p class="mb-4">I have developed and deployed various projects, including enterprise applications, CMS solutions, and database-driven web platforms.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">30+</h2>
-                    </div>
-                    <p class="mb-0">I take pride in delivering top-quality software solutions that exceed client expectations.</p>
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- About End -->
     <!-- CMS Sections-->
     @model List<CmsSectionModel>
@@ -468,29 +503,29 @@
         <div class="col-lg-6 mb-5">
             <h1 class="display-5 mb-0">Contact Us</h1>
         </div>
-    <form method="post" class="contact-form">
-        <div class="mb-3">
-            <label for="name" class="form-label">Ваше ім'я</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Введіть ім'я" required>
-        </div>
+        <form method="post" class="contact-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше ім'я</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Введіть ім'я" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Введіть email" required>
-        </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Введіть email" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="title" class="form-label">Заголовок</label>
-            <input type="text" id="title" name="title" class="form-control" placeholder="Введіть заголовок" required>
-        </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Заголовок</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="Введіть заголовок" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="message" class="form-label">Повідомлення</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Введіть ваше повідомлення" rows="4" required></textarea>
-        </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Повідомлення</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Введіть ваше повідомлення" rows="4" required></textarea>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Відправити</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Відправити</button>
+        </form>
     </div>
     <!-- Contact End -->
     <!-- Map Start -->

@@ -24,4 +24,10 @@
     <ProjectReference Include="..\AndrewDAL\AndrewDAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\img\MyCv.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

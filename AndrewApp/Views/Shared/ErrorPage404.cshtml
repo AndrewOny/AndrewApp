@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_NotFoundLayout";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!-- Floating System Error Messages -->
+<div class="error-message">System Error: File Not Found</div>
+<div class="error-message">Warning: Connection Lost</div>
+<div class="error-message">Error Code 404</div>
+<div class="error-message">Attempting Reconnection...</div>
+<div class="error-message">Process Failed!</div>
+<div class="error-message">System Error: File Not Found</div>
+<div class="error-message">Warning: Connection Lost</div>
+<div class="error-message">Error Code 404</div>
+<div class="error-message">Attempting Reconnection...</div>
+<div class="error-message">Process Failed!</div>
+<div class="error-message">Error: Invalid Input</div>
+<div class="error-message">Error: File Corrupted</div>
+
+
+<!-- Main Error Message -->
+<div class="main">
+    <h1>404</h1>
+    <p>It looks like you're lost...</p>
+    <br>
+    <p>Need help?</p>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+        Go Home
+    </a>
+</div>
