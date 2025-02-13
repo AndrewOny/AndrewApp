@@ -34,10 +34,14 @@ namespace AndrewApp
                 options.UseSqlite(connectionString);
             });
 
+            builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddScoped<ICmsSectionRepository, CmsSectionRepository>();
             builder.Services.AddScoped<ICmsSectionService, CmsSectionService>();
+            builder.Services.AddScoped<IVisitorMessageRepository, VisitorMessageRepository.EmailRepository>();
+            builder.Services.AddScoped<IVisitorMessageService, EmailService>();
 
             builder.Services.AddControllersWithViews();
 

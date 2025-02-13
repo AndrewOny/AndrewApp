@@ -12,11 +12,13 @@ namespace AndrewApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICmsSectionService _cmsSectionService;
+        private readonly IVisitorMessageService _emailService;
 
-        public HomeController(ILogger<HomeController> logger, ICmsSectionService cmsSectionService)
+        public HomeController(ILogger<HomeController> logger, ICmsSectionService cmsSectionService, IVisitorMessageService emailService)
         {
             _logger = logger;
             _cmsSectionService = cmsSectionService;
+            _emailService = emailService;
         }
 
         public IActionResult Index()
@@ -49,6 +51,38 @@ namespace AndrewApp.Controllers
             };
 
             return View(cmsSection);
+        }
+
+        [HttpPost("testemail")]
+        public async Task<IActionResult> SendEmail([FromForm] VisitorMessageDto model)
+        {
+            if (model == null)
+                return BadRequest("Invalid request");
+
+            await _emailService.SendEmailAsync(model.Name, model.Email, model.Title, model.Message);
+            return RedirectToAction("Index");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Route("Home/Error")]
+        public IActionResult Error(int statusCode)
+        {
+            var viewModel = new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+
+            if (statusCode == 404)
+            {
+                return View("NotFound", viewModel);
+            }
+
+            return View(viewModel);
         }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AndrewCore.Services.Interfaces
 {
-    internal interface IVisitorMessageService
+    public interface IVisitorMessageService
     {
+        Task SendEmailAsync(string name, string email, string title, string message);
     }
 }

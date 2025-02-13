@@ -30,11 +30,109 @@
             </div>
         </nav>
     </header>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+    <div class="container-xxl py-6 pt-5" id="contact">
+    <div class="box-shadow-full">
+        <div class="col-lg-6 mb-5">
+            <h1 class="display-5 mb-0">Contact Us</h1>
+        </div>
+        <form action="/testemail" method="post" role="form" class="contactForm">
+            <div id="errormessage"></div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше ім'я</label>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       class="form-control"
+                       placeholder="Введіть ім'я"
+                       data-rule="minlen:4"
+                       data-msg="Будь ласка, введіть принаймні 4 символи"
+                       required>
+                <div class="validation"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="Введіть email"
+                       data-rule="email"
+                       data-msg="Будь ласка, введіть коректний email"
+                       required>
+                <div class="validation"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Заголовок</label>
+                <input type="text"
+                       id="title"
+                       name="title"
+                       class="form-control"
+                       placeholder="Введіть заголовок"
+                       data-rule="minlen:4"
+                       data-msg="Будь ласка, введіть принаймні 8 символів заголовка"
+                       required>
+                <div class="validation"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Повідомлення</label>
+                <textarea id="message"
+                          name="message"
+                          class="form-control"
+                          placeholder="Введіть ваше повідомлення"
+                          rows="4"
+                          data-rule="required"
+                          data-msg="Будь ласка, напишіть повідомлення"
+                          required></textarea>
+                <div class="validation"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Відправити</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Map Start -->
+    <div class="container-fluid px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <!-- Блок з чорним фоном -->
+        <div class="bg-dark">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.870123456789!2d24.709722!3d48.922222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c1e1e1e1e1e1%3A0x1234567890abcdef!2sRatusha%2C%20Ivano-Frankivsk!5e0!3m2!1sen!2sua!4v1676961268712!5m2!1sen!2sua"
+                    frameborder="0"
+                    style="width: 100%; height: 450px; border:0;"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0">
+            </iframe>
+        </div>
+    </div>
+    <!-- Map End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom text-secondary" href="#">Portfolio</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="border-bottom text-secondary" href="https://github.com/AndrewOny">Andrii Onyshchuk</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

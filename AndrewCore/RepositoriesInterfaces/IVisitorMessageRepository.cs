@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AndrewCore.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace AndrewCore.RepositoriesInterfaces
 {
-    internal interface IVisitorMessageRepository
+    public interface IVisitorMessageRepository
     {
+        Task SendEmailAsync(VisitorMessageDto emailMessage);
     }
 }
