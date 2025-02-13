@@ -23,6 +23,8 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -39,7 +41,7 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 animate__animated animate__fadeIn" data-wow-delay="0s">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
             <h1 class="text-primary fw-bold m-0">Main</h1>
         </a>
@@ -60,7 +62,7 @@
     </nav>
     <!-- Navbar End -->
     <!-- Header Start -->
-    <div class="d-flex justify-content-between align-items-center mt-5 min-vh-70 bg-light p-5" id="home">
+    <div class="d-flex justify-content-between align-items-center mt-10 min-vh-70 bg-light p-5" id="home">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
@@ -111,109 +113,79 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- Header End -->
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
+
     <!-- About Start -->
+        
     <div class="container-xxl py-6" id="about">
+        <div class="col-lg-6">
+            <h1 class="display-5 mb-5">About Me</h1>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="box-shadow-full">
                     <div class="row">
-                        <!-- Left Column (Image, Info, Table) -->
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-6 col-md-5">
-                                    <div class="about-img">
-                                        <img src="img/profile.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-7">
-                                    <div class="about-info">
-                                        <p><span class="title-s"><strong>Name: </strong></span> <span>Description 1</span></p>
-                                        <p><span class="title-s"><strong>Profile: </strong></span> <span>Description 2</span></p>
-                                        <p><span class="title-s"><strong>Email: </strong></span> <span>Description 3</span></p>
-                                        <p><span class="title-s"><strong>GitHub: </strong></span> <span>Description 3</span></p>
-                                        <p><span class="title-s"><strong>Instagram: </strong></span> <span>Description 3</span></p>
-                                        <p><span class="title-s"><strong>Telegram: </strong></span> <span>Description 3</span></p>
-                                    </div>
-                                </div>
 
-                                <table style="margin-top: 20px;">
-                                    <tr>
-                                        <td><h5 class="title-left">Good Habits:</h5></td>
-                                        <td><h5 class="title-left">Communication:</h5></td>
-                                        <td><h5 class="title-left">Decision Making:</h5></td>
-                                    </tr>
-                                    <tr>
-                                        <td>• Flexibility of mind and actions;</td>
-                                        <td>• I am able to communicate and negotiate;</td>
-                                        <td>• I make a decision;</td>
-                                    </tr>
-                                    <tr>
-                                        <td>• Developing emotional intelligence;</td>
-                                        <td>• I can manage people;</td>
-                                        <td>• Creativity & Problem Solving;</td>
-                                    </tr>
-                                    <tr>
-                                        <td>• Working on critical thinking;</td>
-                                        <td>• I like consistency and responsibility;</td>
-                                        <td>• Interaction with others;</td>
-                                    </tr>
-                                </table>
-
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="about-img">
+                                    <img src="img/profile.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                                </div>
                             </div>
+                            <div class="col">
+                                <div class="about-info">
+                                    <p><span class="title-s"><strong>Name: </strong></span> <span>Andrew Onyshchuk</span></p>
+                                    <p><span class="title-s"><strong>Profile: </strong></span> <span>Full Stack .NET Developer</span></p>
+                                    <p style="background-color: #f2f4f4 ; border-radius: 10px;">
+                                        <i class="fa fa-envelope" style="color: #000000; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s"><strong>Email: </strong></span> <span>onyschukand@gmail.com</span>
+                                    </p>
+                                    <p style="background-color: #eaecee; border-radius: 10px;">
+                                        <i class="fab fa-github" style="color: #000000; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s"><strong>GitHub: </strong></span> <span><a href="https://github.com/AndrewOny">https://github.com/AndrewOny</a></span>
+                                        </p>
+                                    <p style="background-color: #fdedec ; border-radius: 10px;">
+                                        <i class="fab fa-instagram" style="color: #E4405F; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s"><strong>Instagram: </strong><a href="https://www.instagram.com/">https://www.instagram.com/</a></span>
+                                    </p>
+                                    <p style="background-color: #ebf5fb; border-radius: 10px;">
+                                        <i class="fab fa-telegram" style="color: #0d6efd; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s"><strong>Telegram: </strong></span> <span><a href="https://web.telegram.org/">https://web.telegram.org/</a></span>
+                                    </p>
+                                    <p style="background-color: #d6eaf8; border-radius: 10px;">
+                                        <i class="fab fa-facebook" style="color: #020c99; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s"><strong>Facebook: </strong></span> <span><a href="https://www.facebook.com/">https://www.facebook.com/</a></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <div class="right-top">
+                        <div class="about-me pt-4 pt-md-0">
+                            <div class="title-box-2">
+                                <h5 class="title-left">
+                                    <strong>Profile</strong>
+                                </h5>
+                            </div>
+                            <p class="lead">
+                                As a passionate Trainee Android Developer with hands-on experience in creating intuitive and high-performing mobile applications, I thrive in transforming ideas into reality. With strong skills in Java, Kotlin, and UI/UX design, I bring energy, creativity, and a problem-solving mindset to every project. Let's build the future of mobile together!
+                            </p>
+
                         </div>
-
-                        <!-- Right Column (Profile and Education) -->
-                        <div class="col-md-6">
-                            <div class="about-me pt-4 pt-md-0">
-                                <div class="title-box-2">
-                                    <h5 class="title-left">
-                                        <strong>Profile</strong>
-                                    </h5>
-                                </div>
-                                <p class="lead">As a passionate Trainee Android Developer with hands-on experience</p>
-                                <p class="lead">in creating intuitive and high-performing mobile applications, I thrive</p>
-                                <p class="lead">in transforming ideas into reality. With strong skills in Java, Kotlin,</p>
-                                <p class="lead">and UI/UX design, I bring energy, creativity, and a problem-solving</p>
-                                <p class="lead">mindset to every project. Let's build the future of mobile together!</p>
+                    </div>
+                    <!-- Education Section under Profile -->
+                    <div class="right-top">
+                        <div class="about-me pt-4 pt-md-0">
+                            <div class="title-box-2">
+                                <h5 class="title-left">
+                                    <strong>Education</strong>
+                                </h5>
                             </div>
-
-                            <!-- Education Section under Profile -->
-                            <div class="about-me pt-4 pt-md-0">
-                                <div class="title-box-2">
-                                    <h5 class="title-left">
-                                        <strong>Education</strong>
-                                    </h5>
-                                </div>
-                                <p class="lead">Bachelor of Science in Computer Science from XYZ University</p>
-                                <p class="lead">Graduated with a strong focus on mobile app development and programming languages.</p>
-                                <p class="lead">Attended various workshops on Android development and UI/UX design principles.</p>
-                                <p class="lead">Currently pursuing advanced courses in mobile app performance optimization.</p>
-                            </div>
+                            <p class="lead">
+                                Bachelor of Science in Computer Science from XYZ University. Graduated with a strong focus on mobile app development and programming languages. Attended various workshops on Android development and UI/UX design principles. Currently pursuing advanced courses in mobile app performance optimization.
+                            </p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -226,73 +198,75 @@
     <!-- CMS Sections-->
     @model List<CmsSectionModel>
     <div class="container-xxl py-6 pb-5" id="skill">
-        <div class="container">
-            <h1 class="display-5 mb-5">Skills & Experience</h1>
-            <p class="mb-4">
-                As a Full Stack Developer with expertise in C#, I have a proven track record in designing and developing scalable web applications.
-                From building robust back-end APIs to creating responsive and dynamic front-end user interfaces, I manage the entire development
-                process to deliver seamless, high-performing solutions.
-            </p>
-            <!-- Navigation pills for Skills and Projects -->
-            <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                <li class="nav-item w-50">
-                    <button class="nav-link w-100 py-3 fs-5 active" id="skills-tab" data-bs-toggle="pill" data-bs-target="#skills" aria-controls="skills" aria-selected="true">Skills</button>
-                </li>
-                <li class="nav-item w-50">
-                    <button class="nav-link w-100 py-3 fs-5" id="experience-tab" data-bs-toggle="pill" data-bs-target="#experience" aria-controls="experience" aria-selected="false">Experience</button>
-                </li>
-            </ul>
+        <div class="box-shadow-full">
+            <div class="container">
+                <h1 class="display-5 mb-5">Skills & Experience</h1>
+                <p class="mb-4">
+                    As a Full Stack Developer with expertise in C#, I have a proven track record in designing and developing scalable web applications.
+                    From building robust back-end APIs to creating responsive and dynamic front-end user interfaces, I manage the entire development
+                    process to deliver seamless, high-performing solutions.
+                </p>
+                <!-- Navigation pills for Skills and Projects -->
+                <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                    <li class="nav-item w-50">
+                        <button class="nav-link w-100 py-3 fs-5 active" id="skills-tab" data-bs-toggle="pill" data-bs-target="#skills" aria-controls="skills" aria-selected="true">Skills</button>
+                    </li>
+                    <li class="nav-item w-50">
+                        <button class="nav-link w-100 py-3 fs-5" id="experience-tab" data-bs-toggle="pill" data-bs-target="#experience" aria-controls="experience" aria-selected="false">Experience</button>
+                    </li>
+                </ul>
 
-            <div class="tab-content">
-                <!-- Skills Section -->
-                <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-                    <p class="mb-4">
-                        I am proficient in C#, JavaScript, HTML, CSS, and various other technologies. With expertise in both back-end and front-end development,
-                        I design and implement robust systems that are scalable, maintainable, and responsive. My key strengths include problem-solving, coding best practices,
-                        and keeping up with emerging technologies.
-                    </p>
-                    <h3 class="mb-4">My Skills</h3>
-                    <div class="row align-items-center">
-                        @foreach (var cmsSection in Model.Where(cs => !cs.Title.Contains("-") && !cs.Title.Contains("Project")))
-                        {
-                            <div class="col-md-4 mb-4">
-                                <div class="section p-4 border rounded">
-                                    <h5>@cmsSection.Title</h5>
-                                    <hr class="text-primary my-2">
-                                    <p>@cmsSection.Description</p>
-                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
-                                    {
-                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
-                                    }
+                <div class="tab-content">
+                    <!-- Skills Section -->
+                    <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                        <p class="mb-4">
+                            I am proficient in C#, JavaScript, HTML, CSS, and various other technologies. With expertise in both back-end and front-end development,
+                            I design and implement robust systems that are scalable, maintainable, and responsive. My key strengths include problem-solving, coding best practices,
+                            and keeping up with emerging technologies.
+                        </p>
+                        <h3 class="mb-4">My Skills</h3>
+                        <div class="row align-items-center">
+                            @foreach (var cmsSection in Model.Where(cs => !cs.Title.Contains("-") && !cs.Title.Contains("Project")))
+                            {
+                                <div class="col-md-4 mb-4">
+                                    <div class="section p-4 border rounded">
+                                        <h5>@cmsSection.Title</h5>
+                                        <hr class="text-primary my-2">
+                                        <p>@cmsSection.Description</p>
+                                        @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
+                                        {
+                                            <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
-                </div>
 
-                <!-- Projects Section -->
-                <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
-                    <p class="mb-4">
-                        I have worked on various full-stack development projects, including building scalable web applications, designing APIs,
-                        and integrating front-end technologies. These projects range from e-commerce platforms to custom business solutions,
-                        all focused on enhancing user experience and ensuring high performance.
-                    </p>
-                    <h3 class="mb-4">My Experience</h3>
-                    <div class="row mt-4">
-                        @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("-")))
-                        {
-                            <div class="col-md-4 mb-4">
-                                <div class="section p-4 border rounded">
-                                    <h5>@cmsSection.Title</h5>
-                                    <hr class="text-primary my-2">
-                                    <p>@cmsSection.Description</p>
-                                    @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
-                                    {
-                                        <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
-                                    }
+                    <!-- Projects Section -->
+                    <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+                        <p class="mb-4">
+                            I have worked on various full-stack development projects, including building scalable web applications, designing APIs,
+                            and integrating front-end technologies. These projects range from e-commerce platforms to custom business solutions,
+                            all focused on enhancing user experience and ensuring high performance.
+                        </p>
+                        <h3 class="mb-4">My Experience</h3>
+                        <div class="row mt-4">
+                            @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("-")))
+                            {
+                                <div class="col-md-4 mb-4">
+                                    <div class="section p-4 border rounded">
+                                        <h5>@cmsSection.Title</h5>
+                                        <hr class="text-primary my-2">
+                                        <p>@cmsSection.Description</p>
+                                        @if (!string.IsNullOrEmpty(cmsSection.Image?.Path))
+                                        {
+                                            <img src="@cmsSection.Image.Path" alt="@cmsSection.Title" class="img-fluid mt-3">
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -308,70 +282,7 @@
     </div>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <div id="carouselExample1" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <div class="content-box">
-                            <p>
-                                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("C#") && cs.Title.Contains("Project")))
-                                {
-                                <div class="p-4 border rounded bg-white shadow-sm mt-3">
-                                    <h5 class="text-dark">@cmsSection.Title</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-secondary">@cmsSection.Description</p>
-                                </div>
-                                }
-                            </p>
-                                <a href="#" class="btn btn-light">Дізнатися більше</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        <img src="~/img/Csharp.png" alt="HTML">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <div class="content-box">
-                            <h2>Kotlin</h2>
-                                <p>CSS (Cascading Style Sheets) описує зовнішній вигляд веб-сторінки, визначаючи її стиль і оформлення.</p>
-                                <a href="#" class="btn btn-light">Дізнатися більше</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        <img src="~/img/Kotlin.png" alt="CSS">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <div class="content-box">
-                                <h2>JavaScript</h2>
-                                <p>JavaScript додає інтерактивність та динаміку веб-сторінкам, роблячи їх більш живими.</p>
-                                <a href="#" class="btn btn-light">Дізнатися більше</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="~/img/React.png" alt="JavaScript">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
-
-    <div id="carouselExample2" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="box-shadow-full">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
@@ -380,11 +291,11 @@
                             <p>
                                 @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("C#") && cs.Title.Contains("Project")))
                                 {
-                                    <div class="p-4 border rounded bg-white shadow-sm mt-3">
-                                        <h5 class="text-dark">@cmsSection.Title</h5>
-                                        <hr class="text-primary my-2">
-                                        <p class="text-secondary">@cmsSection.Description</p>
-                                    </div>
+                                            <div class="content-box-db">
+                                                <h5 class="text-dark">@cmsSection.Title</h5>
+                                                <hr class="text-primary my-2">
+                                                <p class="text-secondary">@cmsSection.Description</p>
+                                            </div>
                                 }
                             </p>
                             <a href="#" class="btn btn-light">Дізнатися більше</a>
@@ -400,13 +311,18 @@
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <div class="content-box">
-                            <h2>Kotlin</h2>
-                            <p>CSS (Cascading Style Sheets) описує зовнішній вигляд веб-сторінки, визначаючи її стиль і оформлення.</p>
+                            <h2>.NET</h2>
+                                <p>
+                                    The two major components of .NET Framework are the Common Language Runtime and the .NET Framework Class Library.
+                                    The Common Language Runtime (CLR) is the execution engine that handles running applications. It provides services like thread management, garbage collection, type-safety, exception handling, and more.
+                                    The Class Library provides a set of APIs and types for common functionality. It provides types for strings, dates, numbers, etc. The Class Library includes APIs for reading and writing files, connecting to databases, drawing, and more.
+                                    .NET applications are written in the C#, F#, or Visual Basic programming language. Code is compiled into a language-agnostic Common Intermediate Language (CIL). Compiled code is stored in assemblies—files with a .dll or .exe file extension.
+                                </p>
                             <a href="#" class="btn btn-light">Дізнатися більше</a>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="~/img/Kotlin.png" alt="CSS">
+                        <img src="~/img/NET.jpg" alt="CSS">
                     </div>
                 </div>
             </div>
@@ -415,16 +331,84 @@
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         <div class="content-box">
-                            <h2>JavaScript</h2>
-                            <p>JavaScript додає інтерактивність та динаміку веб-сторінкам, роблячи їх більш живими.</p>
+                                <h2>My site portfolio</h2>
+                                <p>My site portfolio is an online platform I created to showcase my skills, projects, and achievements. It serves as my digital resume, allowing potential clients and employers to learn about my experience and expertise in various technologies. On the site, you'll find project descriptions, code samples, and a contact form for getting in touch. Built with ASP.NET MVC and SQLite, it’s both functional and professional.</p>
                             <a href="#" class="btn btn-light">Дізнатися більше</a>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="~/img/React.png" alt="JavaScript">
+                        <img src="~/img/site.png" alt="JavaScript">
                     </div>
                 </div>
             </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <hr class="icon">
+    <div id="carouselExample2" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="box-shadow-full">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div class="content-box">
+                            <p>
+                                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("React") && cs.Title.Contains("Project")))
+                                {
+                                        <div class="content-box-db">
+                                            <h5 class="text-dark">@cmsSection.Title</h5>
+                                            <hr class="text-primary my-2">
+                                            <p class="text-secondary">@cmsSection.Description</p>
+                                        </div>
+                                }
+                            </p>
+                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/img/React.png" alt="HTML">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div class="content-box">
+                                <h2>CSS (Cascading Style Sheets)</h2>
+                                <p>Using CSS in a React project is a straightforward approach to styling your components. In React, you can include regular CSS files, and style your components just like in any other web development project. The key advantage of using CSS in React is that it's simple and familiar, and you can continue leveraging standard CSS techniques for layout, animations, and responsiveness.</p>
+                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/img/css.png" alt="CSS">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div class="content-box">
+                            <h2>Travel web-site</h2>
+                                <p>My website offers a seamless and interactive platform for users to explore and book travel packages. With features like destination highlights, detailed itineraries, booking options, and customer reviews, the site provides a comprehensive travel experience. React ensures fast performance and smooth navigation, while the responsive design adapts to any device. The user-friendly interface allows visitors to easily browse tour options, view prices, and plan their next adventure with ease. It’s a modern, efficient, and engaging site for anyone looking to book their dream trip.</p>
+                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/img/site-react.png" alt="JavaScript">
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
@@ -435,7 +419,9 @@
         </button>
     </div>
 
+    <hr class="icon">
     <div id="carouselExample3" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="box-shadow-full">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
@@ -444,11 +430,11 @@
                             <p>
                                 @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Kotlin") && cs.Title.Contains("Project")))
                                 {
-                                    <div class="p-4 border rounded bg-white shadow-sm mt-3">
-                                        <h5 class="text-dark">@cmsSection.Title</h5>
-                                        <hr class="text-primary my-2">
-                                        <p class="text-secondary">@cmsSection.Description</p>
-                                    </div>
+                                        <div class="content-box-db">
+                                            <h5 class="text-dark">@cmsSection.Title</h5>
+                                            <hr class="text-primary my-2">
+                                            <p class="text-secondary">@cmsSection.Description</p>
+                                        </div>
                                 }
                             </p>
                             <a href="#" class="btn btn-light">Дізнатися більше</a>
@@ -490,6 +476,7 @@
                 </div>
             </div>
         </div>
+        </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -499,35 +486,36 @@
         </button>
     </div>
     <!-- Projects End -->
-   
     <!-- Contact Start -->
     <div class="container-xxl py-6 pt-5" id="contact">
-        <div class="col-lg-6 mb-5">
-            <h1 class="display-5 mb-0">Contact Us</h1>
+        <div class="box-shadow-full">
+            <div class="col-lg-6 mb-5">
+                <h1 class="display-5 mb-0">Contact Us</h1>
+            </div>
+            <form method="post" class="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Ваше ім'я</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Введіть ім'я" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Введіть email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Заголовок</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Введіть заголовок" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Повідомлення</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Введіть ваше повідомлення" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Відправити</button>
+            </form>
         </div>
-        <form method="post" class="contact-form">
-            <div class="mb-3">
-                <label for="name" class="form-label">Ваше ім'я</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Введіть ім'я" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Введіть email" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="title" class="form-label">Заголовок</label>
-                <input type="text" id="title" name="title" class="form-control" placeholder="Введіть заголовок" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="message" class="form-label">Повідомлення</label>
-                <textarea id="message" name="message" class="form-control" placeholder="Введіть ваше повідомлення" rows="4" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Відправити</button>
-        </form>
     </div>
     <!-- Contact End -->
     <!-- Map Start -->

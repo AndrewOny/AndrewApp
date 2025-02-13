@@ -435,8 +435,6 @@
     justify-content: center;
     align-items: center;
     min-height: 400px;
-    border: 2px solid #0D6EFD; /* ?????????? ?????? */
-    border-radius: 10px;
     padding: 10px;
 }
 
@@ -446,8 +444,16 @@
         border-radius: 10px;
         max-width: 500px;
         text-align: left;
-        border: 2px solid #0D6EFD; /* ?????????? ?????? */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-item .content-box-db {
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        text-align: left;
     }
 
     .carousel-item img {
@@ -455,4 +461,91 @@
         border-radius: 10px;
     }
 
+.box-shadow-full {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+}
 
+.about-img {
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-info {
+    font-size: 20px;
+    color: #333;
+    margin-left: 15px;
+    margin-top: 30px;
+    background: #FFFFFF;
+}
+
+.title-left {
+    font-weight: bold;
+}
+
+.right-top {
+    font-size: 12px; 
+    color: #333;
+    background: #FFFFFF;
+    padding: 10px; 
+    max-width: 1200px; 
+    width: 100%; 
+    word-wrap: break-word; 
+    margin: 0 auto 15px auto; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+
+.col-md-6 {
+    padding: 15px;
+}
+
+/*Separator*/
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+hr.icon {
+    margin: 25px auto 30px;
+    padding: 0;
+    border: 0;
+    border-top: solid 3px;
+    text-align: center;
+}
+
+    hr.icon:after {
+        content: "\f0e7";
+        display: inline-block;
+        position: relative;
+        top: -1.7rem;
+        padding: 0 1rem;
+        font-family: FontAwesome;
+        font-size: 3rem;
+        background-color: #fff;
+        // Must Match Page Background
+    }
+
+
+/* ??????? ???????????? */
+@media (max-width: 768px) {
+    .about-info, .right-top, .habits {
+        max-width: 90%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
+
+    .about-img {
+        width: 100%;
+        height: auto;
+    }
+}
