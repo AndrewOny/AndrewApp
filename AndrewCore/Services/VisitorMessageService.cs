@@ -34,11 +34,14 @@ namespace AndrewCore.Services
             adminMessage.To.Add(new MailboxAddress("", emailAdmin));
             adminMessage.Subject = $"New Contact: {name}";
             adminMessage.Body = new TextPart("plain") { Text = $"New Contact from {name} with email {email}:\n {message}" }; 
+
             var mimeMessage = new MimeMessage();
             mimeMessage.From.Add(new MailboxAddress(senderName, senderEmail));
             mimeMessage.To.Add(new MailboxAddress("", email));
-            mimeMessage.Subject = $"Pizdec horoshiy tu brat";
-            mimeMessage.Body = new TextPart("plain") { Text = $"Dear {name}, we will contact you soon. idi nahuy" };
+            mimeMessage.Subject = $"Thank You for Reaching Out";
+            mimeMessage.Body = new TextPart("plain") { Text = $"Dear {name},\n" +
+                                                              $"Thank you for contacting us. I will get back to you soon.\n" +
+                                                              $"Best regards, Andrew" };
 
             using (var client = new SmtpClient())
             {

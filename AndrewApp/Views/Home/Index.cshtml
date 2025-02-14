@@ -114,9 +114,8 @@
         </div>
     </div>
     <!-- Header End -->
-
     <!-- About Start -->
-        
+
     <div class="container-xxl py-6" id="about">
         <div class="col-lg-6">
             <h1 class="display-5 mb-5">About Me</h1>
@@ -143,22 +142,26 @@
                                     <p style="background-color: #eaecee; border-radius: 10px;">
                                         <i class="fab fa-github" style="color: #000000; margin-right: 5px; margin-left: 5px;"></i>
                                         <span class="title-s"><strong>GitHub: </strong></span> <span><a href="https://github.com/AndrewOny">https://github.com/AndrewOny</a></span>
-                                        </p>
+                                    </p>
                                     <p style="background-color: #fdedec ; border-radius: 10px;">
                                         <i class="fab fa-instagram" style="color: #E4405F; margin-right: 5px; margin-left: 5px;"></i>
-                                        <span class="title-s"><strong>Instagram: </strong><a href="https://www.instagram.com/">https://www.instagram.com/</a></span>
+                                        <span class="title-s"><strong>Instagram: </strong><a href="https://www.instagram.com/_andrew.on_/">https://www.instagram.com/_andrew.on_/</a></span>
                                     </p>
                                     <p style="background-color: #ebf5fb; border-radius: 10px;">
                                         <i class="fab fa-telegram" style="color: #0d6efd; margin-right: 5px; margin-left: 5px;"></i>
-                                        <span class="title-s"><strong>Telegram: </strong></span> <span><a href="https://web.telegram.org/">https://web.telegram.org/</a></span>
+                                        <span class="title-s"><strong>Telegram: </strong></span> <span>@@Andrew_0n</span>
                                     </p>
                                     <p style="background-color: #d6eaf8; border-radius: 10px;">
-                                        <i class="fab fa-facebook" style="color: #020c99; margin-right: 5px; margin-left: 5px;"></i>
-                                        <span class="title-s"><strong>Facebook: </strong></span> <span><a href="https://www.facebook.com/">https://www.facebook.com/</a></span>
+                                        <i class="fab fa-linkedin" style="color: #020c99; margin-right: 5px; margin-left: 5px;"></i>
+                                        <span class="title-s">
+                                            <strong>
+                                                LinkedIn:
+                                            </strong>
+                                        </span> <span><a href="https://ua.linkedin.com/in/андрій-онищук-1ab288262">https://ua.linkedin.com/</a></span>
                                     </p>
                                 </div>
                             </div>
-                        </div>     
+                        </div>
                     </div>
 
                     <div class="right-top">
@@ -169,7 +172,11 @@
                                 </h5>
                             </div>
                             <p class="lead">
-                                As a passionate Trainee Android Developer with hands-on experience in creating intuitive and high-performing mobile applications, I thrive in transforming ideas into reality. With strong skills in Java, Kotlin, and UI/UX design, I bring energy, creativity, and a problem-solving mindset to every project. Let's build the future of mobile together!
+                                <strong>
+                                    Enthusiastic and detail-oriented C# .NET Developer with a solid understanding of object-oriented programming and web application development. Skilled in building foundational backend systems using C#, .NET Core, and ASP.NET MVC, with basic experience in frontend development using HTML, CSS, and JavaScript.<br>
+                                    Eager to learn and grow in a professional environment, with hands-on experience gained through academic projects, including creating RESTful APIs and working with databases like SQL Server using Entity Framework. Familiar with software development principles such as SOLID and Agile methodologies.<br>
+                                    Highly motivated to enhance technical skills, contribute to team projects, and build scalable, user-friendly applications. Known for a proactive attitude, problem-solving mindset, and dedication to continuous improvement in software development practices.<br>
+                                </strong>
                             </p>
 
                         </div>
@@ -183,7 +190,13 @@
                                 </h5>
                             </div>
                             <p class="lead">
-                                Bachelor of Science in Computer Science from XYZ University. Graduated with a strong focus on mobile app development and programming languages. Attended various workshops on Android development and UI/UX design principles. Currently pursuing advanced courses in mobile app performance optimization.
+                                <strong>Ivano-Frankivsk National Technical University of Oil and Gas</strong><br>
+                                <strong>Bachelor’s Degree in Software Engineering</strong><br>
+                                <strong>September 2021 – June 2025</strong><br><br>
+                                <strong>
+                                Completed a comprehensive program focused on software development, testing, and automation. The curriculum provided an in-depth understanding of programming languages, data structures, algorithms, and database systems, alongside practical experience in object-oriented programming and software engineering principles. Gained hands-on experience in designing and implementing software solutions, including web applications and automated systems. Developed a strong foundation in software quality assurance and testing methodologies, with a particular focus on modern tools and techniques.
+                                This education fostered not only technical proficiency but also problem-solving, teamwork, and analytical skills, preparing for a successful career in software engineering.
+                                </strong>
                             </p>
                         </div>
                     </div>
@@ -283,64 +296,64 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <div id="carouselExample1" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="box-shadow-full">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <p>
-                                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("C#") && cs.Title.Contains("Project")))
-                                {
-                                            <div class="content-box-db">
-                                                <h5 class="text-dark">@cmsSection.Title</h5>
-                                                <hr class="text-primary my-2">
-                                                <p class="text-secondary">@cmsSection.Description</p>
-                                            </div>
-                                }
-                            </p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <p>
+                                    @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("C#") && cs.Title.Contains("Project")))
+                                    {
+                                        <div class="content-box-db">
+                                            <h5 class="text-dark">@cmsSection.Title</h5>
+                                            <hr class="text-primary my-2">
+                                            <p class="text-secondary">@cmsSection.Description</p>
+                                        </div>
+                                    }
+                                </p>
+                                <a href="https://github.com/AndrewOny/AndrewApp" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/Csharp.png" alt="HTML">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/Csharp.png" alt="HTML">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <h2>.NET</h2>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <h2>.NET</h2>
                                 <p>
                                     The two major components of .NET Framework are the Common Language Runtime and the .NET Framework Class Library.
                                     The Common Language Runtime (CLR) is the execution engine that handles running applications. It provides services like thread management, garbage collection, type-safety, exception handling, and more.
                                     The Class Library provides a set of APIs and types for common functionality. It provides types for strings, dates, numbers, etc. The Class Library includes APIs for reading and writing files, connecting to databases, drawing, and more.
                                     .NET applications are written in the C#, F#, or Visual Basic programming language. Code is compiled into a language-agnostic Common Intermediate Language (CIL). Compiled code is stored in assemblies—files with a .dll or .exe file extension.
                                 </p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                <a href="https://github.com/AndrewOny/AndrewApp" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/NET.jpg" alt="CSS">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/NET.jpg" alt="CSS">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
                                 <h2>My site portfolio</h2>
                                 <p>My site portfolio is an online platform I created to showcase my skills, projects, and achievements. It serves as my digital resume, allowing potential clients and employers to learn about my experience and expertise in various technologies. On the site, you'll find project descriptions, code samples, and a contact form for getting in touch. Built with ASP.NET MVC and SQLite, it’s both functional and professional.</p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                <a href="https://github.com/AndrewOny/AndrewApp" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/site.png" alt="JavaScript">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/site.png" alt="JavaScript">
-                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
@@ -355,60 +368,60 @@
     <hr class="icon">
     <div id="carouselExample2" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="box-shadow-full">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <p>
-                                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("React") && cs.Title.Contains("Project")))
-                                {
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <p>
+                                    @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("React") && cs.Title.Contains("Project")))
+                                    {
                                         <div class="content-box-db">
                                             <h5 class="text-dark">@cmsSection.Title</h5>
                                             <hr class="text-primary my-2">
                                             <p class="text-secondary">@cmsSection.Description</p>
                                         </div>
-                                }
-                            </p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                    }
+                                </p>
+                                <a href="https://github.com/AndrewOny/coursework-React" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/React.png" alt="HTML">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/React.png" alt="HTML">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
                                 <h2>CSS (Cascading Style Sheets)</h2>
                                 <p>Using CSS in a React project is a straightforward approach to styling your components. In React, you can include regular CSS files, and style your components just like in any other web development project. The key advantage of using CSS in React is that it's simple and familiar, and you can continue leveraging standard CSS techniques for layout, animations, and responsiveness.</p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                <a href="https://github.com/AndrewOny/coursework-React" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/css.png" alt="CSS">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/css.png" alt="CSS">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <h2>Travel web-site</h2>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <h2>Travel web-site</h2>
                                 <p>My website offers a seamless and interactive platform for users to explore and book travel packages. With features like destination highlights, detailed itineraries, booking options, and customer reviews, the site provides a comprehensive travel experience. React ensures fast performance and smooth navigation, while the responsive design adapts to any device. The user-friendly interface allows visitors to easily browse tour options, view prices, and plan their next adventure with ease. It’s a modern, efficient, and engaging site for anyone looking to book their dream trip.</p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                <a href="https://github.com/AndrewOny/coursework-React" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="~/img/site-react.png" alt="JavaScript">
+                        <div class="col-md-6">
+                            <img src="~/img/site-react.png" alt="JavaScript">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
@@ -422,60 +435,62 @@
     <hr class="icon">
     <div id="carouselExample3" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="box-shadow-full">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <p>
-                                @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Kotlin") && cs.Title.Contains("Project")))
-                                {
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <p>
+                                    @foreach (var cmsSection in Model.Where(cs => cs.Title.Contains("Kotlin") && cs.Title.Contains("Project")))
+                                    {
                                         <div class="content-box-db">
                                             <h5 class="text-dark">@cmsSection.Title</h5>
                                             <hr class="text-primary my-2">
                                             <p class="text-secondary">@cmsSection.Description</p>
                                         </div>
-                                }
-                            </p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                                    }
+                                </p>
+                                <a href="https://github.com/AndrewOny/GameFifteen" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/Kotlin.png" alt="HTML">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/Kotlin.png" alt="HTML">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <h2>Jetpack Compose</h2>
-                            <p>Jetpack Compose is Android’s recommended modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.</p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <h2>Jetpack Compose</h2>
+                                <p>Jetpack Compose is Android’s recommended modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.</p>
+                                <a href="https://github.com/AndrewOny/GameFifteen" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="~/img/jetpack.png" alt="CSS">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="~/img/compose.png" alt="CSS">
-                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <div class="content-box">
-                            <h2>ViewModel</h2>
-                            <p>The ViewModel class is a business logic or screen level state holder. It exposes state to the UI and encapsulates related business logic. Its principal advantage is that it caches state and persists it through configuration changes. This means that your UI doesn’t have to fetch data again when navigating between activities, or following configuration changes, such as when rotating the screen.</p>
-                            <a href="#" class="btn btn-light">Дізнатися більше</a>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="content-box">
+                                <h2>Android application using Kotlin and Jetpack Compose</h2>
+                                <p>
+                                    Built with Kotlin and Jetpack Compose, this Android app features a modern, responsive UI with efficient state management, Jetpack Navigation, and Room for data handling, ensuring a seamless and scalable user experience
+                                </p>
+                                <a href="https://github.com/AndrewOny/CoffeeShop" class="btn btn-light" target="_blank" rel="noopener noreferrer">Дізнатися більше</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="~/img/viewmidel.png" alt="JavaScript">
+                        <div class="col-md-6">
+                            <img src="~/img/android.png" alt="JavaScript">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
@@ -486,7 +501,6 @@
         </button>
     </div>
     <!-- Projects End -->
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
