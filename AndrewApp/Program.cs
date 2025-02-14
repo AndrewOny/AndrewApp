@@ -23,8 +23,7 @@ namespace AndrewApp
             var builderSql = new SqliteConnectionStringBuilder(connectionString);
             builderSql.DataSource = Path.GetFullPath(
                 Path.Combine(
-                    AppDomain.CurrentDomain.GetData("DataDirectory") as string
-                        ?? AppDomain.CurrentDomain.BaseDirectory,
+                    AppDomain.CurrentDomain.BaseDirectory,
                     builderSql.DataSource));
 
             connectionString = builderSql.ToString();
