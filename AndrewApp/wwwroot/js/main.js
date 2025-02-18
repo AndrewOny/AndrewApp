@@ -1,6 +1,35 @@
 (function ($) {
     "use strict";
 
+    // Disable submit button initially
+    $(document).ready(function () {
+        $('button[type="submit"]').prop('disabled', true);
+    });
+
+    // Enable submit button only when reCAPTCHA is completed
+    window.recaptchaCallback = function () {
+        $('button[type="submit"]').prop('disabled', false);
+    };
+
+    window.recaptchaExpired = function () {
+        $('button[type="submit"]').prop('disabled', true);
+    };
+
+    // Wait for reCAPTCHA to load properly
+    function checkRecaptcha() {
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.render(document.querySelector('.g-recaptcha'), {
+                'sitekey': '6LdhyNoqAAAAAPKtT6btxaIOaYVshCAHvZqe0czJ',
+                'callback': recaptchaCallback,
+                'expired-callback': recaptchaExpired
+            });
+        } else {
+            setTimeout(checkRecaptcha, 500);
+        }
+    }
+
+    checkRecaptcha();
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
