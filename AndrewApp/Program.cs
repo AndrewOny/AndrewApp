@@ -18,7 +18,7 @@ namespace AndrewApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var connectionString = builder.Configuration.GetConnectionString("SqliteContext");
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             var builderSql = new SqliteConnectionStringBuilder(connectionString);
             builderSql.DataSource = Path.GetFullPath(
