@@ -60,7 +60,7 @@ namespace AndrewApp.Controllers
                 return BadRequest("Invalid request");
 
             await _emailService.SendEmailAsync(model.Name, model.Email, model.Title, model.Message);
-            return RedirectToAction("Index");
+            return new JsonResult(new { success = true, message = "Your message has been sent successfully!" });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

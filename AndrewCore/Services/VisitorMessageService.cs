@@ -33,25 +33,34 @@ namespace AndrewCore.Services
             adminMessage.From.Add(new MailboxAddress(senderName, senderEmail));
             adminMessage.To.Add(new MailboxAddress("", emailAdmin));
             adminMessage.Subject = $"New Contact: {name}";
-            adminMessage.Body = new TextPart("plain") { Text = $"New Contact from {name} with email {email}:\n {message}" }; 
+            adminMessage.Body = new TextPart("plain")
+            {
+                Text = $"New Contact from: {name}\n" +
+                $"Email address: {email}:\n" +
+                $"Title: {title}\n" +
+                $"Message: {message}"
+            };
 
             var mimeMessage = new MimeMessage();
             mimeMessage.From.Add(new MailboxAddress(senderName, senderEmail));
             mimeMessage.To.Add(new MailboxAddress("", email));
             mimeMessage.Subject = $"Thank You for Reaching Out";
-            mimeMessage.Body = new TextPart("plain") { Text = $"Dear {name},\n" +
+            mimeMessage.Body = new TextPart("plain")
+            {
+                Text = $"Dear {name},\n" +
                                                               $"Thank you for contacting us. I will get back to you soon.\n" +
-                                                              $"Best regards, Andrew" };
+                                                              $"Best regards, Andrew"
+            };
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync(smtpServer, smtpPort, SecureSocketOptions.StartTls);
+                await client.ConnectAsync(smtpServer, smtpPort);
                 await client.AuthenticateAsync(smtpUser, smtpPass);
                 await client.SendAsync(adminMessage);
                 await client.SendAsync(mimeMessage);
                 await client.DisconnectAsync(true);
-            }
 
+            }
             await _emailRepository.SendEmailAsync(new VisitorMessageDto
             {
                 Name = name,

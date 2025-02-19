@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
     "use strict";
 
     // Disable submit button initially
@@ -15,20 +15,36 @@
         $('button[type="submit"]').prop('disabled', true);
     };
 
-    // Wait for reCAPTCHA to load properly
-    function checkRecaptcha() {
-        if (typeof grecaptcha !== 'undefined') {
-            grecaptcha.render(document.querySelector('.g-recaptcha'), {
-                'sitekey': '6LdhyNoqAAAAAPKtT6btxaIOaYVshCAHvZqe0czJ',
-                'callback': recaptchaCallback,
-                'expired-callback': recaptchaExpired
-            });
-        } else {
-            setTimeout(checkRecaptcha, 500);
-        }
-    }
+    // AJAX відправка форми (contactForm)
+    $(document).ready(function () {
+        $(".contactForm").submit(function (event) {
+            event.preventDefault(); // Запобігаємо стандартному відправленню форми
 
-    checkRecaptcha();
+            var form = $(this);
+            var formData = form.serialize();
+
+            $.ajax({
+                type: "POST",
+                url: form.attr("action"),
+                data: formData,
+                dataType: "json",
+                success: function (response) {
+                    if (response.success) {
+                        $("#modalMessage").text(response.message);
+                        $("#successModal").modal("show");
+                        form[0].reset(); // Очистка форми
+                        grecaptcha.reset(); // Скидання reCAPTCHA
+                        $('button[type="submit"]').prop('disabled', true);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("Помилка під час надсилання повідомлення.");
+                }
+            });
+        });
+    });
 
     // Spinner
     var spinner = function () {
@@ -40,10 +56,8 @@
     };
     spinner();
 
-
     // Initiate the wowjs
     new WOW().init();
-
 
     // Navbar on scrolling
     $(window).scroll(function () {
@@ -53,7 +67,6 @@
             $('.navbar').fadeOut('slow').css('display', 'none');
         }
     });
-
 
     // Smooth scrolling on the navbar links
     $(".navbar-nav a").on('click', function (event) {
@@ -71,7 +84,6 @@
         }
     });
 
-
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -85,7 +97,6 @@
         return false;
     });
 
-
     // Typed Initiate
     if ($('.typed-text-output').length == 1) {
         var typed_strings = $('.typed-text').text();
@@ -98,7 +109,6 @@
         });
     }
 
-
     // Modal Video
     var $videoSrc;
     $('.btn-play').click(function () {
@@ -107,11 +117,10 @@
     console.log($videoSrc);
     $('#videoModal').on('shown.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-    })
+    });
     $('#videoModal').on('hide.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc);
-    })
-
+    });
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
@@ -119,14 +128,12 @@
         time: 2000
     });
 
-
     // Skills
     $('.skill').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, { offset: '80%' });
-
 
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -140,7 +147,6 @@
         portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
 
-
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
@@ -151,5 +157,3 @@
     });
 
 })(jQuery);
-
-

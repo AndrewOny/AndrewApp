@@ -48,14 +48,14 @@
             <form action="/testemail" method="post" role="form" class="contactForm">
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Ваше ім'я</label>
+                    <label for="name" class="form-label">Your name</label>
                     <input type="text"
                            id="name"
                            name="name"
                            class="form-control"
-                           placeholder="Введіть ім'я"
+                           placeholder="Enter your name"
                            data-rule="minlen:4"
-                           data-msg="Будь ласка, введіть принаймні 4 символи"
+                           data-msg="Please enter at least 4 characters"
                            required>
                     <div class="validation"></div>
                 </div>
@@ -66,42 +66,42 @@
                            id="email"
                            name="email"
                            class="form-control"
-                           placeholder="Введіть email"
+                           placeholder="Please enter your email address"
                            data-rule="email"
-                           data-msg="Будь ласка, введіть коректний email"
+                           data-msg="Please enter a valid email address"
                            required>
                     <div class="validation"></div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Заголовок</label>
+                    <label for="title" class="form-label">Title</label>
                     <input type="text"
                            id="title"
                            name="title"
                            class="form-control"
-                           placeholder="Введіть заголовок"
+                           placeholder="Please enter the title"
                            data-rule="minlen:8"
-                           data-msg="Будь ласка, введіть принаймні 8 символів заголовка"
+                           data-msg="Please enter at least 8 characters for the title"
                            required>
                     <div class="validation"></div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="message" class="form-label">Повідомлення</label>
+                    <label for="message" class="form-label">Message</label>
                     <textarea id="message"
                               name="message"
                               class="form-control"
-                              placeholder="Введіть ваше повідомлення"
+                              placeholder="Please write a message"
                               rows="4"
                               data-rule="required"
-                              data-msg="Будь ласка, напишіть повідомлення"
+                              data-msg="Please write a message"
                               required></textarea>
                     <div class="validation"></div>
                 </div>
 
                 <div class="d-flex flex-column flex-md-row justify-content-start align-items-center">
                     <button type="submit" class="btn btn-lg btn-primary px-5 fw-bold shadow-lg me-md-3" style="height: 74px;">
-                        Відправити
+                        Submit
                     </button>
 
                     <div id="captcha" class="g-recaptcha mt-3 mt-md-0"
