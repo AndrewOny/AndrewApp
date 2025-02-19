@@ -54,12 +54,11 @@ namespace AndrewCore.Services
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync(smtpServer, smtpPort);
-                await client.AuthenticateAsync(smtpUser, smtpPass);
-                await client.SendAsync(adminMessage);
-                await client.SendAsync(mimeMessage);
-                await client.DisconnectAsync(true);
-
+                    await client.ConnectAsync(smtpServer, smtpPort,SecureSocketOptions.SslOnConnect);
+                    await client.AuthenticateAsync(smtpUser, smtpPass);
+                    await client.SendAsync(adminMessage);
+                    await client.SendAsync(mimeMessage);
+                    await client.DisconnectAsync(true);
             }
             await _emailRepository.SendEmailAsync(new VisitorMessageDto
             {
