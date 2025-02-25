@@ -48,18 +48,19 @@ namespace AndrewCore.Services
             mimeMessage.Body = new TextPart("plain")
             {
                 Text = $"Dear {name},\n" +
-                                                              $"Thank you for contacting us. I will get back to you soon.\n" +
-                                                              $"Best regards, Andrew"
+                       $"Thank you for contacting us. I will get back to you soon.\n" +
+                       $"Best regards, Andrew"
             };
 
             using (var client = new SmtpClient())
             {
-                    await client.ConnectAsync(smtpServer, smtpPort,SecureSocketOptions.SslOnConnect);
+                    await client.ConnectAsync(smtpServer, smtpPort, SecureSocketOptions.SslOnConnect);
                     await client.AuthenticateAsync(smtpUser, smtpPass);
                     await client.SendAsync(adminMessage);
                     await client.SendAsync(mimeMessage);
                     await client.DisconnectAsync(true);
             }
+
             await _emailRepository.SendEmailAsync(new VisitorMessageDto
             {
                 Name = name,

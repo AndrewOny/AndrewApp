@@ -18,34 +18,37 @@ namespace AndrewApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            // ????????? ????????? ???? ???????? (ContentRootPath)
+            var contentRootPath = builder.Environment.ContentRootPath;
+            // ???????? ???? ?? ???? ????? ? ????? "databases"
+            var databasePath = Path.Combine(contentRootPath, "databases", "Sqlite.db");
+            // ????????? ????? ???????????
+            var connectionString = $"Data Source={databasePath}";
 
-            var builderSql = new SqliteConnectionStringBuilder(connectionString);
-            builderSql.DataSource = Path.GetFullPath(
-                Path.Combine(
-                    AppDomain.CurrentDomain.BaseDirectory,
-                    builderSql.DataSource));
-
-            connectionString = builderSql.ToString();
-
+            // ???????????? DbContext ?? ????????????? SQLite
             builder.Services.AddDbContext<SqLiteContext>(options =>
             {
                 options.UseSqlite(connectionString);
             });
 
+            // ??????? ???????????? ? appsettings.json
             builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
+            // ???????????? AutoMapper
             builder.Services.AddAutoMapper(typeof(Program));
 
+            // ?????????? ???????????
             builder.Services.AddScoped<ICmsSectionRepository, CmsSectionRepository>();
             builder.Services.AddScoped<ICmsSectionService, CmsSectionService>();
             builder.Services.AddScoped<IVisitorMessageRepository, VisitorMessageRepository.EmailRepository>();
             builder.Services.AddScoped<IVisitorMessageService, EmailService>();
 
+            // ??????? ????????? ??????????? ? ????????????
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
+            // ???????????? ??????? ????????? ?????
             app.UseStatusCodePages(async x =>
             {
                 if (x.HttpContext.Response.StatusCode == StatusCodes.Status404NotFound)
@@ -54,6 +57,7 @@ namespace AndrewApp
                 }
             });
 
+            // ???????????? ??? ??????????
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -62,19 +66,15 @@ namespace AndrewApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
+            // ?????????????
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
-
-        
-
         }
     }
 }

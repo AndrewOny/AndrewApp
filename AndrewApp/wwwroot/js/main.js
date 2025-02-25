@@ -156,4 +156,26 @@
         loop: true,
     });
 
+    // **Вирівнювання висоти всіх слайдів каруселі**
+    function adjustCarouselHeight() {
+        var maxHeight = 0;
+        // Скидаємо встановлену висоту для коректного розрахунку
+        $('.carousel-item').css('min-height', '');
+        $('.carousel-item').each(function () {
+            var currentHeight = $(this).outerHeight();
+            if (currentHeight > maxHeight) {
+                maxHeight = currentHeight;
+            }
+        });
+        $('.carousel-item').css('min-height', maxHeight + 'px');
+    }
+
+    $(document).ready(function () {
+        adjustCarouselHeight();
+    });
+
+    $(window).resize(function () {
+        adjustCarouselHeight();
+    });
+
 })(jQuery);
